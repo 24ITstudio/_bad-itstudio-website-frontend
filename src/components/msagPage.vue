@@ -41,6 +41,7 @@ export default {
             isPlaceholder: true
         }
     },
+    // 再次调用时失灵
     methods:{
         clearPlaceholder(){
             if(this.isPlaceholder){
@@ -126,7 +127,7 @@ export default {
     margin-left: 10%;
     margin-right: 10%;
     height: 73%;
-    margin-top: 9%;
+    margin-top: 8%;
     /* border: 1px, solid, #04132c; */
 }
 
@@ -138,7 +139,7 @@ textarea {
     width: 100%;
     height: 100%;
     /* height: calc(1.5em * 9);   */
-    line-height: 2.7em; 
+    line-height: 2.8em; 
     border: none; 
     outline: none; 
     resize: none; 
@@ -147,6 +148,10 @@ textarea {
     margin: 0;
     font-family: inherit; 
     overflow: hidden;
+    box-sizing: border-box;
+
+    background: linear-gradient(to right, #d9d9d9 2px, transparent 0) 0 -4px/8px 100%,
+    linear-gradient(#666 1px, transparent 0) 0 -1px/100% 2.8em;
     /* border-bottom: 1px solid rebeccapurple; */
 }
 
@@ -164,6 +169,7 @@ textarea:focus::placeholder {
     line-height: 3%;
     border-radius: 100px;
     margin-left: 62%;
+    /* margin-top: 1%; */
     
     background-color: #04132c;
 }
