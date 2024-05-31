@@ -18,13 +18,18 @@
                         </textarea>
                     </div>
                     <div class="submitB">
-                        <button class="inner">发&nbsp;&nbsp;&nbsp;&nbsp;布</button>
+                        <button class="inner" @click="submitMessage">发&nbsp;&nbsp;&nbsp;&nbsp;布</button>
                     </div>
 
                 </div>
             </div>
             <div class="back_right">
-                留言块
+                <div class="goBack">
+                    <img src="../assets/Go Back.png" class="backImg"/>
+                </div>
+                <div class="right_board">
+
+                </div>
             </div>
         </div>
 
@@ -41,19 +46,27 @@ export default {
             isPlaceholder: true
         }
     },
-    // 再次调用时失灵
+    // 不输入内容的话，再次调用时失灵
     methods:{
         clearPlaceholder(){
             if(this.isPlaceholder){
                 this.content = '';
                 this.isPlaceholder = false;
             }
+            console.log("clear")
         },
         setPlaceholder(){
             if(this.content === ''){
                 this.content = '有什么想说的，就在这里留下吧~';
-                this.placeholder = true;
+                this.isplaceholder = true;
             }
+            console.log("set")
+        },
+        // checkInput() {
+        //     this.isPlaceholder = this.content === '';
+        // },
+        submitMessage() {
+            alert('发布成功');
         }
     }
     
@@ -73,7 +86,7 @@ export default {
     flex-direction: column;
 }
 .content{
-    height: 90%;
+    height: 95%;
     margin-top: 2%;
     display: flex;
     flex-direction: row;
@@ -123,7 +136,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    /* height: 40%; */
     margin-left: 10%;
     margin-right: 10%;
     height: 73%;
@@ -139,7 +152,7 @@ textarea {
     width: 100%;
     height: 100%;
     /* height: calc(1.5em * 9);   */
-    line-height: 2.8em; 
+    line-height: 2.9em; 
     border: none; 
     outline: none; 
     resize: none; 
@@ -151,7 +164,7 @@ textarea {
     box-sizing: border-box;
 
     background: linear-gradient(to right, #d9d9d9 2px, transparent 0) 0 -4px/8px 100%,
-    linear-gradient(#666 1px, transparent 0) 0 -1px/100% 2.8em;
+    linear-gradient(#666 1px, transparent 0) 0 -1px/100% 2.9em;
     /* border-bottom: 1px solid rebeccapurple; */
 }
 
@@ -165,7 +178,7 @@ textarea:focus::placeholder {
 
 .submitB{
     width: 28%;
-    height: 4%;
+    height: 5%;
     line-height: 3%;
     border-radius: 100px;
     margin-left: 62%;
@@ -213,5 +226,25 @@ textarea:focus::placeholder {
     width: 70%;
     height: 100%;
 }
+
+.goBack {
+    /* background-color: violet; */
+    margin-left: 2%;
+    margin-top: 1%;
+
+}
+
+.backImg {
+    height: 3%;
+    width: 3%;
+
+}
+
+.right_board{
+    border: 3px, solid, #04132c;
+    height: 85%;
+}
+
+
 
 </style>
