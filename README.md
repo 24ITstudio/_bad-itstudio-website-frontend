@@ -1,5 +1,7 @@
 # itwebsite
 
+> :warning: See itstudio-website-frontend repo instead, this repo is just a outdated version.
+
 > A Vue.js project
 
 ## Build Setup
